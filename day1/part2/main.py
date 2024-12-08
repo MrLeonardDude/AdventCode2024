@@ -32,7 +32,6 @@ class HistoricallySignificantLocationsFileRepository:
                 else:
                     second_list.elements_counter[int(second_elem)] += 1
 
-        print(second_list.elements)
         return first_list, second_list
 
 
@@ -42,15 +41,12 @@ def main(file_repo):
     similarity_score = 0
     size_list = len(first_list)
     for i in range(0, size_list):
-        if i < 10:
-            print(first_list[i])
-
         similarity_score += first_list[i] * second_list.elements_counter.get(
             first_list[i], 0
         )
 
-    print(similarity_score)
+    print(f"The solution is {similarity_score}")
 
 if __name__ == "__main__":
-    file_repo = HistoricallySignificantLocationsFileRepository("input.txt")
+    file_repo = HistoricallySignificantLocationsFileRepository("../input.txt")
     main(file_repo)

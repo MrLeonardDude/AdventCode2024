@@ -29,14 +29,11 @@ def main(file_repo):
     difference = 0
     size_list = len(localtion_lists[0])
     for i in range(0, size_list):
-        if i < 10:
-            print(f"{localtion_lists[0][i]}-{localtion_lists[1][i]}")
-
         difference += fabs(localtion_lists[0][i] - localtion_lists[1][i])
 
-    print(difference)
+    print(f"The solution is {difference}")
 
 
 if __name__ == "__main__":
-    file_repo = HistoricallySignificantLocationsFileRepository("input.txt")
+    file_repo = HistoricallySignificantLocationsFileRepository("../input.txt")
     main(file_repo)
